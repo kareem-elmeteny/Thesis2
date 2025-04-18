@@ -21,3 +21,17 @@ pip install chromadb
 ```
 
 ## Save requirements.txt
+
+```bash
+pip freeze > requirements.txt
+```
+
+This will save the PIP package versions used in a `requirements.txt` file 
+
+To reinstall all packages again run
+
+```bash
+python -m venv .venv 
+source .venv/bin/activate  # (On Windows, use `.venv\Scripts\activate`)
+pip install -r requirements.txt
+```
