@@ -33,6 +33,38 @@ chroma run --host localhost --port 8000 --path ./chromadata
 pip install chromadb
 ```
 
+## Create a Web UI Application 
+
+- Install `flask` and `flask_cors`. Flask is required to create a web application using Python and flask_cors allows the Vite/React development server to make API calls to the python webserver.
+```bash
+pip install flask flask_cors
+```
+
+- Create a new [React](https://react.dev/) using [vite](https://vite.dev/).
+```bash
+npx create vite@latest webui -- --template react-ts
+cd webui
+npm install
+```
+
+- Install `sass` and `bootstrap` to have UI
+```
+npm install sass@^1.76.0 --save-dev
+npm install bootstrap
+```
+
+- Install `axios` library to make API calls
+```
+npm install axios
+```
+
+- Run [webserver.py](./webserver.py) to run the python webserver
+
+- Run `npm run dev` in the `webui` folder to run the web interface in development mode.
+
+- Run `npm run build` in the `webui` folder to build the client UI.
+
+
 ## Save requirements.txt
 
 ```bash
