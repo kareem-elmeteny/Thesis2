@@ -3,6 +3,7 @@ import axios from 'axios';
 interface QueryResponse {
     response?: string;
     error?: string;
+    time_taken?: number;
 }
 
 interface QueryRequest {

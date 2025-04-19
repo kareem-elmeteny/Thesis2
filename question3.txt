@@ -1,0 +1,5 @@
+Rank products by percentage 5-star ratings and show product names and percentages
+
+Answered without RAG: 1. Product A - 98% 5-Star Ratings 2. Product B - 96% 5-Star Ratings 3. Product C - 94% 5-Star Ratings 4. Product D - 92% 5-Star Ratings 5. Product E - 89% 5-Star Ratings These are the top products ranked by percentage of 5-star ratings, with their respective product names and percentages.
+---
+Answered with RAG:1. Apple iPhone 15 Pro Max, 256GB, Blue Titanium - Unlocked (Renewed Premium) - 100% (5 stars) 2. Smartwatch for Men Women, Alexa Built-in, 1.8" Fitness Tracker, IP68 Waterproof Smartwatch for Android & iPhone with Bluetooth Call (Answer/Make), Heart Rate/SpO2/Sleep Monitor/Pedometer, Black - 90% (5 stars) 3. SAMSUNG Galaxy S25 Cell Phone, 128GB AI Smartphone, Unlocked Android, AI Camera, Fast Processor, ProScaler Display, Long Battery Life, 2025, US 1 Yr Manufacturer Warranty, Silver Shadow - 90% (5 stars) These products have the highest percentage of 5-star reviews.

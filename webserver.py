@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS
 import chromadb
 import ollama
+import time  # Import time module to measure execution time
 
 app = Flask(__name__)
 CORS(app)
@@ -29,6 +30,8 @@ def handle_query():
 
     # Perform the query
     try:
+        start_time = time.time()  # Start the timer
+
         if use_rag:
             # Generate embeddings for the query
             queryEmbed = ollama.embed(model=ollamaModel, input=query)['embeddings']
@@ -47,7 +50,10 @@ def handle_query():
             noRagOutput = ollama.generate(model="mistral", prompt=query, stream=False)
             response = noRagOutput['response']
 
-        return jsonify({"response": response})
+        end_time = time.time()  # End the timer
+        elapsed_time = end_time - start_time  # Calculate elapsed time in seconds
+
+        return jsonify({"response": response, "time_taken": elapsed_time})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
