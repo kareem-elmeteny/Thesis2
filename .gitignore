@@ -1,1 +1,3 @@
 .venv/
+chromadata/
+__pycache__/
