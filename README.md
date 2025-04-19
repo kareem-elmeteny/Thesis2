@@ -56,6 +56,10 @@ pip install -r requirements.txt
 - [extract_text.py](./extract_text.py) helper functions used by [importdocs.py](./importdocs.py)
 - [search.py](./search.py) uses ollama to answer queries about prodcts. It displays two responses. A response without RAG and another with RAG using the extracted data that was imported by [importdocs.py](./importdocs.py) so as to compare responses.
 
+## Sample Questions/Responses
+
+- [question1.txt](./question1.txt)
+- [question2.txt](./question2.txt)
 
 ## Sources
 

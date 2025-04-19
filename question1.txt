@@ -1,0 +1,21 @@
+What do customers think of Apple iPhone 15 Pro Max?
+
+Answered without RAG:  As of now, there is no iPhone 15 Pro Max available for purchase as it has not been officially announced by Apple. However, based on the trends and expectations from the tech community and past customer reviews of Apple's high-end iPhones, customers tend to have high expectations for new iPhones. Here are some potential features that Apple iPhone 15 Pro Max customers might be interested in:
+
+1. Improved camera system: Customers appreciate advancements in camera technology. They often look for improved resolution, better low-light performance, and more camera lenses (such as a periscope lens for zooming or a dedicated macro lens).
+
+2. Enhanced display quality: A higher resolution display with better color accuracy, faster refresh rates, and greater brightness levels can greatly enhance the user experience.
+
+3. Faster processor: Customers expect each new iPhone to have a more powerful chip than its predecessor, which will result in smoother performance and improved multitasking capabilities.
+
+4. Battery life: Improved battery capacity and efficiency are essential for many customers who want their devices to last throughout the day without frequent charging.
+
+5. Water resistance and durability: Customers value iPhone's reputation for being well-built and durable, as well as having strong water resistance capabilities.
+
+6. Innovative features: Apple is known for introducing unique and innovative features, such as Face ID, AirPods integration, and iOS updates that improve usability. Customers often look forward to seeing what new features the next iPhone will bring.
+---
+Answered with RAG:  Based on the customer reviews, it appears that the Apple iPhone 15 Pro Max is generally well-received by customers. Many reviewers mention that their devices are in pristine condition, with no noticeable scratches or scuffs. The phone's battery life and camera quality are also frequently praised, as well as its performance and display. One customer even goes so far as to say it is the "best phone [they] have ever owned."   
+
+However, some customers have expressed concerns about the size of the phone, with one customer stating that they would prefer a smaller model. Some reviewers also note that while their devices are in good condition, they do not come with the original box or accessories. It should be noted that these particular iPhones were renewed, meaning they had been previously owned and refurbished.
+
+Overall, it seems that the majority of customers are happy with their Apple iPhone 15 Pro Max and would recommend it to others. Those considering purchasing a renewed version of the phone may want to take note of the potential lack of accessories or original packaging.
