@@ -1,4 +1,5 @@
 import os
+import subprocess  # Import subprocess to manage external processes
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS  # Import CORS
 import chromadb
@@ -12,9 +13,17 @@ CORS(app)
 chromaCollectionName = "amazonReviews"
 ollamaModel = "nomic-embed-text"
 
+# Start ChromaDB in the background
+chromaProcess = subprocess.Popen(
+    ["chroma", "run", "--host", "localhost", "--port", "8000", "--path", "./chromadata"],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE
+)
+
 # Initialize ChromaDB client and collection
 chromaClient = chromadb.HttpClient(host="localhost", port=8000)
 collection = chromaClient.get_or_create_collection(name=chromaCollectionName)
+
 
 @app.route('/query', methods=['POST'])
 def handle_query():
@@ -68,4 +77,10 @@ def serve_static_files(path):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    try:
+        app.run(host='0.0.0.0', port=5000)
+    finally:
+        # Terminate the ChromaDB process when the webserver exits
+        print("Terminating ChromaDB process...")
+        chromaProcess.terminate()
+        chromaProcess.wait()
