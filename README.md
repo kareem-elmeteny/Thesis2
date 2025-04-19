@@ -13,6 +13,13 @@ pip install requests_html lxml_html_clean
 
 Run `amazon.py` which should download customers reviews for some mobile devices from amazon.com and save them as JSON in the data folder.
 
+## Install Ollama
+ - Download and install Ollama
+ - Open a terminal and pull the models used by this project
+```bash
+ollama pull nomic-embed-text
+ollama pull mistral
+```
 
 ## Install and Run Chromadb
 
