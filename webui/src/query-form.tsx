@@ -39,37 +39,43 @@ function QueryForm() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <textarea
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Enter your query here..."
-                    rows={5}
-                    style={{ width: '100%' }}
-                />
-                <button type="submit" disabled={loading}>
+        <>
+            <form onSubmit={handleSubmit} className="my-4">
+                <div className="mb-3">
+                    <textarea
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Enter your query here..."
+                        rows={5}
+                        className="form-control"
+                    />
+                </div>
+                <button type="submit" className="btn btn-primary w-100" disabled={loading}>
                     {loading ? 'Loading...' : 'Submit'}
                 </button>
             </form>
 
-            {error && <div style={{ color: 'red', marginTop: '1rem' }}>Error: {error}</div>}
+            {error && (
+                <div className="alert alert-danger mt-3" role="alert">
+                    {error}
+                </div>
+            )}
 
-            <div style={{ marginTop: '1rem' }}>
-                <h3>Result With RAG:</h3>
-                <div style={{ border: '1px solid #ccc', padding: '1rem' }}>
+            <div className="mt-4">
+                <h4>Result with RAG:</h4>
+                <div className="border p-3 rounded bg-light">
                     {ragResult || 'No result yet.'}
                 </div>
             </div>
 
-            <div style={{ marginTop: '1rem' }}>
-                <h3>Result Without RAG:</h3>
-                <div style={{ border: '1px solid #ccc', padding: '1rem' }}>
+            <div className="mt-4">
+                <h4>Result without RAG:</h4>
+                <div className="border p-3 rounded bg-light">
                     {noRagResult || 'No result yet.'}
                 </div>
             </div>
-        </div>
+        </>
     );
-};
+}
 
 export default QueryForm;
