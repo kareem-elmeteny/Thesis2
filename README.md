@@ -49,6 +49,13 @@ source .venv/bin/activate  # (On Windows, use `.venv\Scripts\activate`)
 pip install -r requirements.txt
 ```
 
+## Components
+
+- [amazon.py](./amazon.py) extracts customer data for some electronic devices from amazon.com website
+- [importdocs.py](./importdocs.py) parses the customer review data extracted by [amazon.py](./amazon.py) and stores them in chromadb
+- [extract_text.py](./extract_text.py) helper functions used by [importdocs.py](./importdocs.py)
+- [search.py](./search.py) uses ollama to answer queries about prodcts. It displays two responses. A response without RAG and another with RAG using the extracted data that was imported by [importdocs.py](./importdocs.py) so as to compare responses.
+
 
 ## Sources
 
