@@ -1,10 +1,11 @@
-from flask import Flask, request, jsonify
+import os
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS  # Import CORS
 import chromadb
 import ollama
 import time  # Import time module to measure execution time
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='webui/dist')  # Set the static folder
 CORS(app)
 
 # Configuration
@@ -56,6 +57,15 @@ def handle_query():
         return jsonify({"response": response, "time_taken": elapsed_time})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_static_files(path):
+    # Serve static files from the webui/dist directory
+    if path == '' or not os.path.exists(os.path.join(app.static_folder, path)):
+        path = 'index.html'  # Default to index.html for SPA
+    return send_from_directory(app.static_folder, path)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
