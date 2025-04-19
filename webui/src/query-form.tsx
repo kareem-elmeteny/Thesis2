@@ -4,7 +4,17 @@ import { queryAPI } from './query';
 function formatTime(seconds: number): string {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes} minute(s) and ${remainingSeconds} second(s)`;
+    const secondsUnit = seconds === 1 ? 'second' : 'seconds';
+    const minutesUnit = minutes === 1 ? 'minute' : 'minutes';
+
+    if (minutes === 0 && remainingSeconds === 0) {
+        return '0 seconds';
+    }
+
+    if (minutes === 0) {
+        return `${remainingSeconds} ${secondsUnit}`;
+    }
+    return `${minutes} ${minutesUnit} and ${remainingSeconds} ${secondsUnit}`;
 }
 
 
