@@ -6,7 +6,13 @@ import chromadb
 import ollama
 import time  # Import time module to measure execution time
 
-app = Flask(__name__, static_folder='webui/dist')  # Set the static folder
+# Get the absolute path of the current Python file
+currentFilePath = os.path.abspath(__file__)
+baseDir = os.path.dirname(currentFilePath)  # Get the directory of the current file
+distFolder = os.path.join(baseDir, 'webui', 'dist')  # Join the base directory with 'webui/dist'
+chromaDbPath = os.path.join(baseDir, 'chromadata')  # Path to ChromaDB data
+
+app = Flask(__name__, static_folder=distFolder)  # Set the static folder
 CORS(app)
 
 # Configuration
@@ -15,7 +21,7 @@ ollamaModel = "nomic-embed-text"
 
 # Start ChromaDB in the background
 chromaProcess = subprocess.Popen(
-    ["chroma", "run", "--host", "localhost", "--port", "8000", "--path", "./chromadata"],
+    ["chroma", "run", "--host", "localhost", "--port", "8000", "--path", chromaDbPath],
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE
 )

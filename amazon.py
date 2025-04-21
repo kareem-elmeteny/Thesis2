@@ -6,6 +6,11 @@ import json
 
 from requests.adapters import HTTPAdapter
 
+# Get the absolute path of the current Python file
+currentFilePath = os.path.abspath(__file__)
+baseDir = os.path.dirname(currentFilePath)  # Get the directory of the current file
+dataPath = os.path.join(baseDir, 'data')
+
 class TLSAdapter(HTTPAdapter):
     """A custom adapter to enforce TLS 1.2 and ignore certificate errors."""
     def init_poolmanager(self, *args, **kwargs):
@@ -128,12 +133,12 @@ class Reviews:
 
 
 def getReviews(asin):
-    file_path = f'data/{asin}.json'
+    file_path = os.path.join(dataPath, f'{asin}.json')
     if os.path.exists(file_path):
         return
     
-    if not os.path.exists('data'):
-        os.makedirs('data')
+    if not os.path.exists(dataPath):
+        os.makedirs(dataPath)
     reviews = Reviews(asin)
     result = reviews.getAllReviews()
     productData = {
